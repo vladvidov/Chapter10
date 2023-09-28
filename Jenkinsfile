@@ -19,21 +19,21 @@ pipeline {
         }
    
     stage('Build') {
-          //agent { 
-          //  node{
-          //    label "DockerServer"; 
-          //    }
-          //}
+          agent { 
+            node{
+              label "DockerServer"; 
+              }
+          }
           steps {
-              sh 'docker build -t chapter10:latest .'
+              sh 'docker build -t chapter10:latest https://github.com/vladvidov/Chapter10.git'
           }
       }        
       stage('Deploy') {
-          //agent { 
-          //  node{
-          //    label "DockerServer"; 
-          //    }
-          //}
+          agent { 
+            node{
+              label "DockerServer"; 
+              }
+          }
           steps {
               sh 'docker run -tdi -p 5000:5000 chapter10:latest'
           }
