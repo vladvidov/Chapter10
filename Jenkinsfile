@@ -25,7 +25,7 @@ pipeline {
           //    }
           //}
           steps {
-              sh 'docker build https://github.com/vladvidov/Chapter10.git -t chapter10:latest'
+              sh 'docker build -t chapter10:latest .'
           }
       }        
       stage('Deploy') {
