@@ -1,12 +1,12 @@
 pipeline {
     agent  any;
     stages {
-        stage('Preparing the environment') {
-            steps {
-                //sh 'python3 -m pip install -r requirements.txt'
-                sh 'sudo apt-get install -y python3-pylint python3-pytest'
-            }
-        }
+        //stage('Preparing the environment') {
+        //    steps {
+        //        //sh 'python3 -m pip install -r requirements.txt'
+        //        sh 'sudo apt-get install -y python3-pylint python3-pytest'
+        //    }
+        //}
         stage('Code Quality') {
             steps {
                 sh 'python3 -m pylint app.py'
